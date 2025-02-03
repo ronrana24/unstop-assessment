@@ -7,7 +7,7 @@ const app = express();
 connectDB();
 
 app.use(express.json());
-app.use(cors({ origin: ['http://localhost:5173', 'https://unstop-assessment-frontend-eight.vercel.app/'] }));
+app.use(cors({ origin: ['http://localhost:5173', 'https://unstop-assessment-frontend-eight.vercel.app', 'https://unstop-assessment-frontend-ronrana24s-projects.vercel.app'] }));
 app.use('/api/rooms', roomRoutes);
 
 app.use((req, res) => {
