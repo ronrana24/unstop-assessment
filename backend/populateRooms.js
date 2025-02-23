@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const connectDB = require('./database/connection');
 const Room = require('./models/Room');
+const Visitor = require('./models/Visitor');
 
 const populateRooms = async () => {
     await connectDB();
@@ -21,4 +22,13 @@ const populateRooms = async () => {
     process.exit();
 };
 
-populateRooms();
+const populate = async () => {
+    await connectDB();
+
+    await Visitor.create({ visits: 0 });
+    console.log('Rooms populated successfully!');
+    process.exit();
+};
+
+// populateRooms();
+populate();
